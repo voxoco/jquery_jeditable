@@ -308,6 +308,7 @@
 
                           /* Check if given target is function */
                           if ($.isFunction(settings.target)) {
+                              console.log("target is function")
                               var str = settings.target.apply(self, [input.val(), settings]);
                               $(self).html(str);
                               self.editing = false;
@@ -318,6 +319,7 @@
                               }
                           } else {
                               /* Add edited content and id of edited element to POST. */
+                              console.log("target is not function")
                               var submitdata = {};
                               submitdata[settings.name] = input.val();
                               submitdata[settings.id] = self.id;
